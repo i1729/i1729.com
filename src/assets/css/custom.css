@@ -1,0 +1,25 @@
+* {
+  font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
+  color: hsl(0, 5%, 10%);
+}
+body {
+  text-align: center;
+  background-color: hsl(210, 20%, 98%);
+  line-height: 1.5;
+  max-width: 80ch;
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0 auto !important;
+  padding: 2rem 1.25rem;
+  counter-reset: theorem;
+  counter-reset: definition;
+  color: hsl(0, 5%, 10%);
+  background-color: hsl(210, 20%, 98%);
+  text-rendering: optimizeLegibility;
+}
+a {
+  color: #a00 !important;
+}
+ol {
+  display: none;
+}
