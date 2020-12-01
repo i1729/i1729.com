@@ -1,21 +1,23 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import createHistory from 'history/createBrowserHistory'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 
 import '../assets/css/custom.css'
 
-import Home from './Home'
 /*
 import ProfileInfo from './Profile/Info'
 import Profile from './Profile'
 */
-import CredentialInfo from './Credential/Info'
-import Credential from './Credential'
-import Feed from './Feed'
-import Folio from './Folio'
-import Earn from './Earn'
+
+const CredentialInfo = React.lazy(() => import('./Credential/Info'));
+const Credential = React.lazy(() => import('./Credential'));
+const Feed = React.lazy(() => import('./Feed'));
+const Folio = React.lazy(() => import('./Folio'));
+const Earn = React.lazy(() => import('./Earn'));
+const Home = React.lazy(() => import('./Home'));
 
 const history = createHistory()
+const Loader = () =>  <BounceLoader css={"display: inline-block"} size={50} color={"#a00"} />
 
 const App = () => 
   <Router history={history}>
@@ -24,12 +26,12 @@ const App = () =>
       <Route path='/profile/:id' component={() => <ProfileInfo />} />
       <Route path='/profile' component={() => <Profile />} />
 */}
-      <Route path='/credential/:id' component={() => <CredentialInfo />} />
-      <Route path='/credential' component={() => <Credential />} />
-      <Route path='/feed' component={() => <Feed />} />
-      <Route path='/folio' component={() => <Folio />} />
-      <Route path='/earn' component={() => <Earn />} />
-      <Route path='/' component={() => <Home />} />
+      <Route path='/credential/:id' component={() => <Suspense fallback={Loader}><CredentialInfo /></Suspense>} />
+      <Route path='/credential' component={() => <Suspense fallback={Loader}><Credential /></Suspense>} />
+      <Route path='/feed' component={() => <Suspense fallback={Loader}><Feed /></Suspense>} />
+      <Route path='/folio' component={() => <Suspense fallback={Loader}><Folio /></Suspense>} />
+      <Route path='/earn' component={() => <Suspense fallback={Loader}><Earn /></Suspense>} />
+      <Route path='/' component={() => <Suspense fallback={Loader}><Home /></Suspense>} />
     </Switch>
   </Router>
 
