@@ -23,6 +23,10 @@ export default () => {
     } else {
       const web3 = window.web3;
       const ens = web3.eth.ens;
+      window.ethereum.request({ method: 'eth_accounts' })
+      .then(account => {
+        window.location.href = '/profile/' + account;
+      });
       web3.eth.ens.getAddress(ENS_NAME).then((address) => {
         setEnsAddress(address); 
         setLoading(false);
