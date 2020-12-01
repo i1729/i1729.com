@@ -25,15 +25,23 @@ export default () => {
       const ens = web3.eth.ens;
       window.ethereum.request({ method: 'eth_accounts' })
       .then(account => {
-        window.location.href = '/profile/' + account;
+        if (!web3.utils.isAddress(account)) { 
+          return; 
+        } else {
+          alert(account);
+          window.location.href = '/profile/' + account;
+        }
       });
       web3.eth.ens.getAddress(ENS_NAME).then((address) => {
         setEnsAddress(address); 
         setLoading(false);
       });
       ethereum.on('accountsChanged', function (accounts) {
-        if(!accounts[0]) { return; }
-        window.location.href = '/profile/' + accounts[0];
+        if(!web3.utils.isAddress(accounts[0])) { 
+          return; 
+        } else {
+          window.location.href = '/profile/' + accounts[0];
+        }
       });
     }
   }, []);
