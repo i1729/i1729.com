@@ -6,9 +6,9 @@ import Web3 from 'web3';
 
 export default () => {
   const { id } = useParams();
-  const ENS_NAME = id + ".eth";
   const [loading, setLoading] = useState(true);
   const [ensAddress, setEnsAddress] = useState(null);
+  const [ensName, setEnsName] = useState(null);
 
   const ethEnabled = () => {
     if (window.ethereum) {
@@ -24,11 +24,18 @@ export default () => {
       alert("Please install an Ethereum-compatible browser or extension like MetaMask to use this dApp!");
     } else {
       const web3 = window.web3;
-      const ens = web3.eth.ens;
-      web3.eth.ens.getAddress(ENS_NAME).then((address) => {
-        setEnsAddress(address); 
+      if (web3.utils.isAddress(id)) { 
+        setEnsAddress(id);
+        setEnsName("Ethereum Address");
         setLoading(false);
-      });
+      } else {
+        const ens = web3.eth.ens;
+        setEnsName(id + ".eth");
+        web3.eth.ens.getAddress(id + ".eth").then((address) => {
+          setEnsAddress(address); 
+          setLoading(false);
+        });
+      }
     }
   }, []);
 
@@ -49,7 +56,7 @@ export default () => {
           <Container>
             <Row style={{ justifyContent: "center" }}>
               <Col className="content" sm={12}>
-                <h3>{ENS_NAME}</h3>
+                <h3>{ensName}</h3>
                 { ensAddress ? <p>{ensAddress}</p> : null}
               </Col>
             </Row>

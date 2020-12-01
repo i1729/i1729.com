@@ -27,6 +27,9 @@ export default () => {
         setEnsAddress(address); 
         setLoading(false);
       });
+      ethereum.on('accountsChanged', function (accounts) {
+        window.location.href = '/profile/' + accounts[0];
+      });
     }
   }, []);
 
