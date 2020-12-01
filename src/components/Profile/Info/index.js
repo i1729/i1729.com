@@ -6,7 +6,8 @@ import BounceLoader from "react-spinners/BounceLoader";
 import { Container, Row, Col } from 'react-grid-system';
 
 export default () => {
-  const ENS_NAME = "1729" + ".eth";
+  const { id } = useParams();
+  const ENS_NAME = id + ".eth";
   const [loading, setLoading] = useState(true);
   const [ensAddress, setEnsAddress] = useState(null);
   const [ensUrl, setEnsUrl] = useState(null);

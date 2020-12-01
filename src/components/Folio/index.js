@@ -86,7 +86,7 @@ export default () => {
   return (
     <>
       <h1>1729 Folio</h1>
-      <p>This is the <a href="https://1729.com">1729</a> folio.</p>
+      <p>This is the <a href="/">1729</a> folio.</p>
       <p>
         <a onClick={() => setPageId(0)}>Movies</a>,
         <a onClick={() => setPageId(591081063)}> Books</a>,

@@ -82,7 +82,7 @@ export default () => {
   return (
     <>
       <h1>1729 Feed</h1>
-      <p>This is the <a href="https://1729.com">1729</a> feed.</p>
+      <p>This is the <a href="/">1729</a> feed. You can view the RSS version <a href="https://api.i1729.com/rssfeed">here</a>.</p>
       {loading ? 
             <BounceLoader
               css={"display: inline-block"}
