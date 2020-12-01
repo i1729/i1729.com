@@ -7,6 +7,7 @@ import '../assets/css/custom.css'
 const Loader = () =>  <BounceLoader css={"display: inline-block"} size={50} color={"#a00"} />
 const history = createHistory()
 
+const ProfileInfo = React.lazy(() => import('./Profile/Info'));
 const Profile = React.lazy(() => import('./Profile'));
 const CredentialInfo = React.lazy(() => import('./Credential/Info'));
 const Credential = React.lazy(() => import('./Credential'));
@@ -18,6 +19,7 @@ const Home = React.lazy(() => import('./Home'));
 const App = () => 
   <Router history={history}>
     <Switch>
+      <Route path='/profile/:id' component={() => <Suspense fallback={Loader}><ProfileInfo /></Suspense>} />
       <Route path='/profile' component={() => <Suspense fallback={Loader}><Profile /></Suspense>} />
       <Route path='/credential/:id' component={() => <Suspense fallback={Loader}><CredentialInfo /></Suspense>} />
       <Route path='/credential' component={() => <Suspense fallback={Loader}><Credential /></Suspense>} />

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import BounceLoader from "react-spinners/BounceLoader";
 import { Container, Row, Col } from 'react-grid-system';
+import { useParams } from "react-router-dom"
 import Web3 from 'web3';
 
 export default () => {
-  const ENS_NAME = "1729" + ".eth";
+  const { id } = useParams();
+  const ENS_NAME = id + ".eth";
   const [loading, setLoading] = useState(true);
   const [ensAddress, setEnsAddress] = useState(null);
 
