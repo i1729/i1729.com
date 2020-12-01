@@ -38,11 +38,6 @@ export default () => {
             setLoading(false);
           }
         });
-        web3.eth.ens.getText(tempEnsName, 'url').then((url) => {
-          if (url) {
-            setEnsUrl(url); 
-          }
-        });
       }
     }
   }, []);
