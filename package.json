@@ -35,6 +35,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot --port 8042",
+    "start:prod": "webpack-dev-server --mode production --open --hot --port 8042",
     "prebuild": "webpack --mode production",
     "build": "npm run prebuild",
     "lint": "eslint './src/**/*.js'",

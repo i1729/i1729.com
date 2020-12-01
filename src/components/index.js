@@ -12,8 +12,8 @@ import Feed from './Feed'
 import Folio from './Folio'
 import CredentialInfo from './Credential/Info'
 import Credential from './Credential'
-import Earn from './Earn'
 */
+import Earn from './Earn'
 
 const history = createHistory()
 
@@ -27,8 +27,8 @@ const App = () =>
       <Route path='/folio' component={() => <Folio />} />
       <Route path='/credential/:id' component={() => <CredentialInfo />} />
       <Route path='/credential' component={() => <Credential />} />
-      <Route path='/earn' component={() => <Earn />} />
 */}
+      <Route path='/earn' component={() => <Earn />} />
       <Route path='/' component={() => <Home />} />
     </Switch>
   </Router>
