@@ -5,6 +5,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import '../assets/css/custom.css'
 
 import Home from './Home'
+/*
 import ProfileInfo from './Profile/Info'
 import Profile from './Profile'
 import Feed from './Feed'
@@ -12,6 +13,7 @@ import Folio from './Folio'
 import CredentialInfo from './Credential/Info'
 import Credential from './Credential'
 import Earn from './Earn'
+*/
 
 const history = createHistory()
 
