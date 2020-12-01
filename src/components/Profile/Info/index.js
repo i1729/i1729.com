@@ -30,7 +30,6 @@ export default () => {
         setEnsName("Ethereum Address");
         setLoading(false);
       } else {
-        const ens = web3.eth.ens;
         const tempEnsName = id + ".eth";
         setEnsName(tempEnsName);
         web3.eth.ens.getAddress(tempEnsName).then((address) => {
