@@ -28,7 +28,6 @@ export default () => {
         if (!web3.utils.isAddress(account)) { 
           return; 
         } else {
-          alert(account);
           window.location.href = '/profile/' + account;
         }
       });
