@@ -32,6 +32,7 @@ export default () => {
         setLoading(false);
       });
       ethereum.on('accountsChanged', function (accounts) {
+        if(!accounts[0]) { return; }
         window.location.href = '/profile/' + accounts[0];
       });
     }
