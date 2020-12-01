@@ -9,7 +9,7 @@ export default () => {
   const [loading, setLoading] = useState(true);
   const [ensAddress, setEnsAddress] = useState(null);
   const [ensName, setEnsName] = useState(null);
-  const [ensUrl, setEnsUrl] = useState(null);
+  const [ensContentHash, setContentHash] = useState(null);
 
   const ethEnabled = () => {
     if (window.ethereum) {
@@ -38,6 +38,12 @@ export default () => {
             setLoading(false);
           }
         });
+        web3.eth.ens.getContenthash(tempEnsName).then((hash) => {
+          if (hash) {
+            setEnsContentHash(hash); 
+            setLoading(false);
+          }
+        });
       }
     }
   }, []);
@@ -61,7 +67,7 @@ export default () => {
               <Col className="content" sm={12}>
                 <h3>{ensName}</h3>
                 { ensAddress ? <p>{ensAddress}</p> : null}
-                { ensUrl ? <a href={ensUrl}><p>{ensUrl}</p></a> : null}
+                { ensContentHash ? <p>{ensContentHash}</p> : null}
               </Col>
             </Row>
           </Container>
