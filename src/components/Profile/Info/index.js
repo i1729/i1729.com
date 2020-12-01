@@ -67,7 +67,7 @@ export default () => {
               <Col className="content" sm={12}>
                 <h3>{ensName}</h3>
                 { ensAddress ? <p>{ensAddress}</p> : null}
-                { ensUrl ? <p>{ensUrl}</p> : null}
+                { ensUrl ? <a href={ensUrl}><p>{ensUrl}</p></a> : null}
               </Col>
             </Row>
           </Container>
