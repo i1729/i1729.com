@@ -29,6 +29,7 @@
     "mobx-react": "^6.2.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-grid-system": "^7.1.1",
     "react-multistep": "^5.1.0",
     "react-router-dom": "^5.2.0",
     "react-spinners": "^0.8.1"
