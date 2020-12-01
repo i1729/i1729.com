@@ -18,7 +18,7 @@ export default () => {
 
   useEffect(() => {
     if (!ethEnabled()) {
-      alert("Please install an Ethereum-compatible browser or extension like MetaMask to use this dApp!");
+      alert("Please install an Ethereum-compatible browser or extension like MetaMask to use 1729!");
     } else {
       const web3 = window.web3;
       window.ethereum.request({ method: 'eth_accounts' })
