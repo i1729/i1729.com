@@ -8,11 +8,11 @@ import Home from './Home'
 /*
 import ProfileInfo from './Profile/Info'
 import Profile from './Profile'
-import Feed from './Feed'
-import Folio from './Folio'
 import CredentialInfo from './Credential/Info'
 import Credential from './Credential'
 */
+import Feed from './Feed'
+import Folio from './Folio'
 import Earn from './Earn'
 
 const history = createHistory()
@@ -23,11 +23,11 @@ const App = () =>
 {/*
       <Route path='/profile/:id' component={() => <ProfileInfo />} />
       <Route path='/profile' component={() => <Profile />} />
-      <Route path='/feed' component={() => <Feed />} />
-      <Route path='/folio' component={() => <Folio />} />
       <Route path='/credential/:id' component={() => <CredentialInfo />} />
       <Route path='/credential' component={() => <Credential />} />
 */}
+      <Route path='/feed' component={() => <Feed />} />
+      <Route path='/folio' component={() => <Folio />} />
       <Route path='/earn' component={() => <Earn />} />
       <Route path='/' component={() => <Home />} />
     </Switch>
