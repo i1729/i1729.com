@@ -8,9 +8,9 @@ import Home from './Home'
 /*
 import ProfileInfo from './Profile/Info'
 import Profile from './Profile'
+*/
 import CredentialInfo from './Credential/Info'
 import Credential from './Credential'
-*/
 import Feed from './Feed'
 import Folio from './Folio'
 import Earn from './Earn'
@@ -23,9 +23,9 @@ const App = () =>
 {/*
       <Route path='/profile/:id' component={() => <ProfileInfo />} />
       <Route path='/profile' component={() => <Profile />} />
+*/}
       <Route path='/credential/:id' component={() => <CredentialInfo />} />
       <Route path='/credential' component={() => <Credential />} />
-*/}
       <Route path='/feed' component={() => <Feed />} />
       <Route path='/folio' component={() => <Folio />} />
       <Route path='/earn' component={() => <Earn />} />
