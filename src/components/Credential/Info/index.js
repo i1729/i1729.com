@@ -25,7 +25,6 @@ export default () => {
     axios.get('https://api.i1729.com/sign1729/' + address)
     .then(res => {
       setLoading(false);
-      setContributor1729(true);
     })
     .catch(error  => {
       console.log(error);
@@ -38,6 +37,7 @@ export default () => {
     .then(res => {
       setUser(res.data);
       if (res.data.contributor1729 == true) {
+        setContributor1729(true);
         if (!ethEnabled()) {
           alert("Please install an Ethereum-compatible browser or extension like MetaMask to get your 1729 cryptocredential!");
         } else {
