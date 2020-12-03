@@ -30,6 +30,7 @@ export default () => {
     })
     .catch(error  => {
       console.log(error);
+      setLoading(false);
     });
   }
 
